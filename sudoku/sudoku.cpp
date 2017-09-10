@@ -75,11 +75,15 @@ void sudoku(int i, int j)
 	board[i][j] = 0;
 	return;
 }
-int main()
+int main(int argc, char *argv[])
 {
-	freopen("sudoku.txt", "w", stdout);
 	init();
-	cin >> N;
+	if (sscanf(argv[2],"%d", &N) == 0)
+	{
+		cout << "请输入一个数字：" << endl;
+		return 0;
+	}
+	else freopen("sudoku.txt", "w", stdout); 
 	sudoku(0, 1);
 	return 0;
 }
