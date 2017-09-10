@@ -2,7 +2,7 @@
 using namespace std;
 int board[9][9];
 int N;
-void init()//³õÊ¼»¯ 
+void init()//åˆå§‹åŒ– 
 {
 	for (int i = 0; i<9; i++)
 	{
@@ -13,7 +13,7 @@ void init()//³õÊ¼»¯
 	}
 	board[0][0]=3;//(2+9)%9+1=3
 }
-void print()//Êä³ö 
+void print()//è¾“å‡º 
 {
 	for (int i = 0; i<9; i++)
 	{
@@ -25,20 +25,20 @@ void print()//Êä³ö
 	}
 	cout << endl;
 }
-int check(int row, int col, int num)//ÅĞ¶ÏÊÇ·ñÄÜ·Å 
+int check(int row, int col, int num)//åˆ¤æ–­æ˜¯å¦èƒ½æ”¾ 
 {
-	for (int i = 0; i<9; i++)//ÅĞ¶ÏÁĞÓĞÃ»ÏàÍ¬µÄ 
+	for (int i = 0; i<9; i++)//åˆ¤æ–­åˆ—æœ‰æ²¡ç›¸åŒçš„ 
 	{
 		if (board[i][col] == num)return 0;
 	}
-	for (int j = 0; j<9; j++)//ÅĞ¶ÏĞĞÓĞÃ»ÏàÍ¬µÄ 
+	for (int j = 0; j<9; j++)//åˆ¤æ–­è¡Œæœ‰æ²¡ç›¸åŒçš„ 
 	{
 		if (board[row][j] == num)return 0;
 	}
 	int x = row / 3, y = col / 3;
 	x = 3 * x;
 	y = 3 * y;
-	for (int i = 0; i<3; i++)//¼ì²éĞ¡¾Å¹¬¸ñ 
+	for (int i = 0; i<3; i++)//æ£€æŸ¥å°ä¹å®«æ ¼ 
 	{
 		for (int j = 0; j<3; j++)
 		{
@@ -47,7 +47,7 @@ int check(int row, int col, int num)//ÅĞ¶ÏÊÇ·ñÄÜ·Å
 	}
 	return 1;
 }
-int t = 0;//Í³¼ÆÊä³öÁË¶àÉÙÊı¶À 
+int t = 0;//ç»Ÿè®¡è¾“å‡ºäº†å¤šå°‘æ•°ç‹¬ 
 void sudoku(int i, int j)
 {
 	for (int x = 1; x <= 9; x++)
@@ -80,7 +80,7 @@ int main(int argc, char *argv[])
 	init();
 	if (sscanf(argv[2],"%d", &N) == 0)
 	{
-		cout << "ÇëÊäÈëÒ»¸öÊı×Ö£º" << endl;
+		cout << "è¯·è¾“å…¥ä¸€ä¸ªæ•°å­—" << endl;
 		return 0;
 	}
 	else freopen("sudoku.txt", "w", stdout); 
